@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Nw+OSO19YOnt3JU4Ydl6seqouyw3sstJLoytAIim6vQ9502clQFNpIKf8xquB+KKaVHNKjfd6FzIqBx10h7E1Q==",
+  "success": true,
+  "projectFilePath": "M:\\GUI-Oct27\\GUI-main\\ModernGUI_Surveilia.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\C0398816\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
+    "C:\\Users\\C0398816\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\C0398816\\.nuget\\packages\\simplemodal.wpf\\1.0.0\\simplemodal.wpf.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
