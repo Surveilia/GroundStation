@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\UserContent",
+    "\\UserContent\\Components",
     "\\UserContent\\Views"
   ],
-  "SelectedNode": "\\UserContent\\Views\\UserMenuView.xaml",
+  "SelectedNode": "\\UserContent\\Components\\MenuBar.xaml",
   "PreviewInSolutionExplorer": false
 }

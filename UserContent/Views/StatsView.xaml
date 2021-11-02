@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModernGUI_Surveilia.UserContent.Views"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
         Height="415" Width="653"
         Background="#140915">
@@ -33,16 +34,14 @@
             <TextBlock Text="SURVEILIA - STATS" Foreground="FloralWhite" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"
                    FontSize="18" Grid.ColumnSpan="1" Margin="5,8,17,7" Width="190" FontFamily="Copperplate Gothic Bold" Height="20"/>
         </Grid>
-
-        <Canvas x:Name="Graph1" HorizontalAlignment="Left" Height="288" Margin="51,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="247" Background="BlueViolet"/>
-        <Label x:Name="Graph1Label" Foreground="White" HorizontalAlignment="Left" Margin="51,344,0,0" Grid.Row="1" VerticalAlignment="Top"
-               Content="This label recieves graph one's data."/>
-        
-        <Canvas x:Name="Graph2" Width="247" Height="288" Grid.Row="1" Background="white" Margin="355,46,51,46"/>
-        <Label x:Name="Graph2Label" HorizontalAlignment="Left" Margin="355,344,0,0" Foreground="White" Grid.Row="1" VerticalAlignment="Top"
-               Content="This label Recieves graph two's data"/>
-
-
-
+        <Label FontSize="18" Background="White" Grid.Row="1" HorizontalContentAlignment="Center" FontWeight="Heavy">Final Flight Analysis</Label>
+        <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Right" Grid.Row="1" Margin="10,25,0,5">
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis Title="General Information" LabelFormatter="{Binding YFormatter}" Foreground="Black" FontSize="12"></lvc:Axis>
+            </lvc:CartesianChart.AxisY>
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis Title="Time(m?)" Labels="{Binding Labels}" Foreground="Black" FontSize="12"></lvc:Axis>
+            </lvc:CartesianChart.AxisX>
+        </lvc:CartesianChart>
     </Grid>
 </UserControl>
