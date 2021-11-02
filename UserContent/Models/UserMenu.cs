@@ -6,5 +6,6 @@ namespace ModernGUI_Surveilia.UserContent.Models
 {
     public class UserMenu
     {
+        public string UserName { get; set; }
     }
 }

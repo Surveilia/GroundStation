@@ -46,7 +46,7 @@ namespace ModernGUI_Surveilia {
         /// </summary>
         [System.STAThreadAttribute()]
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.10.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.11.0")]
         public static void Main() {
             ModernGUI_Surveilia.App app = new ModernGUI_Surveilia.App();
             app.Run();

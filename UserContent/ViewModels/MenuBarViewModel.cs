@@ -4,6 +4,8 @@ using System.Text;
 using ModernGUI_Surveilia.UserContent.Commands;
 using ModernGUI_Surveilia.UserContent.Services;
 using System.Windows.Input;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace ModernGUI_Surveilia.UserContent.ViewModels
 {
@@ -26,6 +28,5 @@ namespace ModernGUI_Surveilia.UserContent.ViewModels
             NavigateStatsCommand = new UpdateViewCommand(statsNavigationService);
             NavigateUserMenuCommand = new UpdateViewCommand(userMenuNavigationService);
         }
-
     }
 }

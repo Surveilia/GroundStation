@@ -12,12 +12,27 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Images\" />
+    <None Remove="Images\camera.jpg" />
+    <None Remove="Images\Surveilia.jpg" />
+    <None Remove="UserContent\Components\camera.jpg" />
+    <None Remove="UserContent\Components\Surveilia.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="LiveCharts" Version="0.9.7" />
+    <PackageReference Include="LiveCharts.Wpf.Core" Version="0.9.8" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
     <PackageReference Include="SimpleModal.WPF" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Surveilia.jpg" />
+    <Resource Include="UserContent\Components\camera.jpg" />
+    <Resource Include="UserContent\Components\Surveilia.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Screenshots\" />
   </ItemGroup>
 
 </Project>

@@ -1,12 +1,26 @@
 {
   "version": 2,
-  "dgSpecHash": "Nw+OSO19YOnt3JU4Ydl6seqouyw3sstJLoytAIim6vQ9502clQFNpIKf8xquB+KKaVHNKjfd6FzIqBx10h7E1Q==",
+  "dgSpecHash": "DVT3FtLn3LtF8E9/87cm/5SFC+Tg3XnrpvW+NGIswOH1DNx/rT605W5JN1/DFvuhgistAvTpEQ3plNyvgfdzyA==",
   "success": true,
-  "projectFilePath": "M:\\GUI-Oct27\\GUI-main\\ModernGUI_Surveilia.csproj",
+  "projectFilePath": "C:\\Users\\Ethan Pyle\\Source\\Repos\\GroundStation\\ModernGUI_Surveilia.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\C0398816\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
-    "C:\\Users\\C0398816\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
-    "C:\\Users\\C0398816\\.nuget\\packages\\simplemodal.wpf\\1.0.0\\simplemodal.wpf.1.0.0.nupkg.sha512"
+    "C:\\Users\\Ethan Pyle\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
+    "C:\\Users\\Ethan Pyle\\.nuget\\packages\\livecharts.core\\0.9.8\\livecharts.core.0.9.8.nupkg.sha512",
+    "C:\\Users\\Ethan Pyle\\.nuget\\packages\\livecharts.wpf.core\\0.9.8\\livecharts.wpf.core.0.9.8.nupkg.sha512",
+    "C:\\Users\\Ethan Pyle\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
+    "C:\\Users\\Ethan Pyle\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Ethan Pyle\\.nuget\\packages\\simplemodal.wpf\\1.0.0\\simplemodal.wpf.1.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'LiveCharts 0.9.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "LiveCharts",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

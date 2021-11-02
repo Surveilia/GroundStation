@@ -20,5 +20,10 @@ namespace ModernGUI_Surveilia.UserContent.ViewModels
 
             NavigateMenuCommand = new UpdateViewCommand(menuNavigationService);
         }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+        }
     }
 }
