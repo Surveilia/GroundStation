@@ -1,0 +1,20 @@
+﻿ModernGUI_Surveilia
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\Users\Ethan Pyle\Source\Repos\GroundStation\obj\Debug\netcoreapp3.1\
+ModernGUI_Surveilia
+none
+false
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+C:\Users\Ethan Pyle\Source\Repos\GroundStation\App.xaml
+7-79767182
+
+371486998690
+1971963349134
+MainWindow.xaml;UserContent\Components\MenuBar.xaml;UserContent\Components\SurveiliaLayout.xaml;UserContent\Views\HelpView.xaml;UserContent\Views\MenuView.xaml;UserContent\Views\StatsView.xaml;UserContent\Views\UserMenuView.xaml;
+
+False
+

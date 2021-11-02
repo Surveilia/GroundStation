@@ -13,7 +13,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModernGUI_Surveilia.UserContent.Components"
-        mc:Ignorable="d"
+        xmlns:viewmodels="clr-namespace:ModernGUI_Surveilia.UserContent.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:MenuBarViewModel}"
+             mc:Ignorable="d"
         Background="#140915"
         Height="450" Width="800">
 
@@ -90,15 +91,30 @@
         This should be configurable for a user to add their desired picture and change their name.
         -->
         <StackPanel Margin="0,0,0,0" Background="#0F093D" Grid.Row="1">
-            <StackPanel Orientation="Horizontal">
-                <Button x:Name="UserBTN" Margin="10,20,10,20" Height="90" ToolTip="Edit User Settings" Command="{Binding NavigateUserMenuCommand}">
-                    <Button.Content>
-                        <Image x:Name="SurveiliaImage" Source="D:\School\Year3\GroundStation\GUIupD\GUI_UpdatedFM-main\Images\Surveilia.jpg" HorizontalAlignment="Center" Width="105" Height="90"/>
-                    </Button.Content>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button x:Name="UserBTN" Height="90" Width="90" ToolTip="Edit User Settings" Command="{Binding NavigateUserMenuCommand}" Margin="0,10,0,0">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/UserContent/Components/Surveilia.jpg"/>
+                    </Button.Background>
                 </Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5,0,5,5" HorizontalAlignment="Center"/>
-            <Label Name="NameTextBlock" FontSize="14" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+            <Label Name="NameTextBlock" FontSize="14" Width="100" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White" Margin="0,20,0,0"></Label>
+            <Label Name="lblTime" HorizontalAlignment="Center" Margin="0,25,0,0" Width="100" Height="30" FontSize="14" Foreground="Black" Background="White"/>
+            <Label Name="timeLabel" HorizontalAlignment="Center" Margin="0,25,0,0" Width="100" Height="30" FontSize="14" Foreground="Black" Background="White"/>
+            <Button x:Name="ScreenshotButton" HorizontalAlignment="Center" Margin="0,25,0,0" Width="100" Height="60" Click="Screenshot_Click" RenderTransformOrigin="0.5,0.5" BorderThickness="1,1,1,1" >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="0"/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="/UserContent/Components/camera.jpg"/>
+                </Button.Background>
+            </Button>
         </StackPanel>
     </Grid>
 </UserControl>
