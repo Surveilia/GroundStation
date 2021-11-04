@@ -41,7 +41,6 @@ namespace ModernGUI_Surveilia.UserContent.Components
         {
             lblTime.Content = DateTime.Now.ToString("HH:mm:ss");
 
-            timeLabel.Content = index;
             index++;
         }
         //exit the application
@@ -52,8 +51,7 @@ namespace ModernGUI_Surveilia.UserContent.Components
         //minimize the window
         private void Minimize_Click(object sender, RoutedEventArgs e)
         {
-            this.Height = 50;
-            
+            //this.Height = 50;
         }
 
         private void Screenshot_Click(object sender, RoutedEventArgs e)
@@ -62,8 +60,15 @@ namespace ModernGUI_Surveilia.UserContent.Components
         }
 
         private void Screenshot(FrameworkElement element)
-        { 
-            String filename = "C:/Users/Ethan Pyle/Desktop/Screenshots/" + DateTime.Now.ToString("ddMMyyyy-hhmmss") +".png";
+        {
+            string path = @"D:\Pictures\Surveilia\Screenshots\";
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            String filename = path + DateTime.Now.ToString("ddMMyyyy-hhmmss") +".png";
+            
             //get screenshot of the element
             RenderTargetBitmap bmp = new RenderTargetBitmap((int)element.ActualWidth, (int)element.ActualHeight, 96, 96, PixelFormats.Pbgra32);
             bmp.Render(element);
