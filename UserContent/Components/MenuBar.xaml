@@ -80,9 +80,11 @@
             <Button x:Name="Help" Content="Help" FontSize="18" Foreground="LightGray" Grid.Column="3" VerticalAlignment="Center" 
                     Background="#0F0F2D" HorizontalAlignment="Center" FontFamily="Copperplate Gothic Bold" Height="22" Margin="25,6,22,7" Width="53" ToolTip="Help" Grid.RowSpan="1" Command="{Binding NavigateHelpCommand}"/>
             <Button x:Name="Minimize" HorizontalAlignment="Right" VerticalAlignment="Center" Content="-"
-                    Foreground="LightGray" Grid.Column="4" Click="Minimize_Click" FontSize="14" Width="23" Height="23" Margin="0,5,10,7" Grid.RowSpan="1"/>
+                    Foreground="LightGray" Grid.Column="4" Click="Minimize_Click" FontSize="14" Width="23" Height="23" Margin="0,5,25,7" Grid.RowSpan="1"/>
+            <Button x:Name="Maximize" HorizontalAlignment="Right" VerticalAlignment="Center" Content="+"
+                    Foreground="LightGray" Grid.Column="4" Click="Maximize_Click" FontSize="14" Width="23" Height="23" Margin="0,5,0,7" Grid.RowSpan="1"/>
             <Button x:Name="Exit" HorizontalAlignment="Center" VerticalAlignment="Center" Content="X"
-                    Foreground="LightGray" Grid.Column="5" Click="Exit_Click" FontSize="14" Width="23" Height="23" Margin="1,5,3,7" Grid.RowSpan="1"/>
+                    Foreground="LightGray" Grid.Column="5" Click="Exit_Click" FontSize="14" Width="23" Height="23" Margin="0,5,0,7" Grid.RowSpan="1"/>
 
         </Grid>
 

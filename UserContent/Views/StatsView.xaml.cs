@@ -23,7 +23,6 @@ namespace ModernGUI_Surveilia.UserContent.Views
         int listIndex = 10;
         public StatsView()
         {
-
             InitializeComponent();
             //array to populate the integer
             int[] dataArray = new int[20];
@@ -77,11 +76,10 @@ namespace ModernGUI_Surveilia.UserContent.Views
 
             //modifying any series values will also animate and update the chart
             //SeriesCollection[3].Values.Add(5d);
-
             DataContext = this;
         }
         public SeriesCollection SeriesCollection { get; set; }
         public string[] Labels { get; set; }
-        public Func<double, string> YFormatter { get; set; }
+        public Func<double, string> YFormatter { get; set; } 
     }
 }

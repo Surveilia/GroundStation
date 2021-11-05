@@ -52,8 +52,7 @@ namespace ModernGUI_Surveilia.UserContent.Components
         //minimize the window
         private void Minimize_Click(object sender, RoutedEventArgs e)
         {
-            this.Height = 50;
-            
+            Application.Current.MainWindow.Height = 50;
         }
 
         private void Screenshot_Click(object sender, RoutedEventArgs e)
@@ -74,6 +73,11 @@ namespace ModernGUI_Surveilia.UserContent.Components
             FileStream fs = new FileStream(filename, FileMode.Create);
             encoder.Save(fs);
             fs.Close();
+        }
+
+        private void Maximize_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.Height = 450;
         }
     }
 }

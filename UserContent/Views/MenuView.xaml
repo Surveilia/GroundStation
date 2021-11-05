@@ -30,7 +30,7 @@
             <!-- 
             This block of code represents the buttons and GUI header. 
             -->
-            <TextBlock Text="SURVEILIA - MENU" Foreground="FloralWhite" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"
+            <TextBlock Text="MENU" Foreground="FloralWhite" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"
                    FontSize="18" Grid.ColumnSpan="1" Width="186" FontFamily="Copperplate Gothic Bold" Height="20" Margin="5,8,35,7"/>
         </Grid>
         <Label HorizontalAlignment="Left" Margin="455,37,0,0" Grid.Row="1" Foreground="White" Background="Green"
