@@ -152,8 +152,8 @@ namespace ModernGUI_Surveilia.UserContent.Views
             }
 
 
-            Labels = new[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
-            YFormatter = value => value.ToString("C");
+            Labels = new[] { "1", "2", "3", "4", "5", "6", "7"};
+            YFormatter = value => value.ToString("F");
 
             //modifying the series collection will animate and update the chart
            /* SeriesCollection.Add(new LineSeries

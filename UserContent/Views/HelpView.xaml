@@ -24,7 +24,7 @@
             <RowDefinition Height="380"/>
         </Grid.RowDefinitions>
 
-        <Grid Background="#0F0F2D">
+        <Grid Background="#140915">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="653"/>
             </Grid.ColumnDefinitions>

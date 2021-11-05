@@ -39,7 +39,7 @@
             <RowDefinition Height="380"/>
         </Grid.RowDefinitions>
 
-        <Grid Background="#0F0F2D">
+        <Grid Background="#140915">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="653"/>
             </Grid.ColumnDefinitions>
@@ -51,20 +51,18 @@
                        HorizontalAlignment="Left" FontSize="18" Margin="5,8,0,8" Width="238" 
                        FontFamily="Copperplate Gothic Bold" Height="20"/>
         </Grid>
-        <Label Content="Current User:" Background="#0F293D" FontSize="14" Foreground="FloralWhite" Grid.Row="2" Width="100" Height="30" VerticalAlignment="Top" 
-               HorizontalAlignment="Left" Margin="20,20,20,0"/>
-        <Label x:Name="FullName"  Background="#252F3D" FontSize="14" Foreground="FloralWhite" Grid.Row="2" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" 
-               Margin="120,20,0,0" HorizontalContentAlignment="Center" DataContext="Name"/>
+        <Label x:Name="FullName"  Background="#140915" FontSize="14" Foreground="#140915" Grid.Row="2" Width="200" Height="30" 
+               VerticalAlignment="Top" HorizontalAlignment="Left" Margin="120,20,0,0" HorizontalContentAlignment="Center" DataContext="Name"/>
         <Label Background="#0F293D" FontSize="14" Foreground="FloralWhite" Grid.Row="1" Width="80" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left"
-               Margin="20,70,0,0" HorizontalContentAlignment="Center" >Operator:</Label>
-        <TextBox x:Name="Name" BorderBrush="#252F3D" Background="#252F3D" FontSize="20" Foreground="FloralWhite" Grid.Row="1" Width="230" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" 
-                 Margin="100,70,0,0" TextAlignment="Left"></TextBox>
-        <Button Grid.Row="1" Background="#0F293D" Foreground="FloralWhite" Height="40" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" 
-                Margin="20,120,0,0" Click="Save_Click">Save</Button>
+               Margin="20,15,0,0" HorizontalContentAlignment="Center" >Operator:</Label>
+        <TextBox x:Name="Name" BorderBrush="#252F3D" Background="#252F3D" FontSize="20" Foreground="FloralWhite" Grid.Row="1" Width="230" Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                 Margin="100,15,0,0" TextAlignment="Left"></TextBox>
+        <Button Grid.Row="1" Background="#0F293D" Foreground="FloralWhite" Height="19" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Margin="20,56,0,0" Click="Save_Click">Save</Button>
 
-        <Label Content="Ground Station Purpose" HorizontalAlignment="Left" Margin="10,196,0,0" Grid.Row="1" FontFamily="Times New Roman" 
+        <Label Content="Ground Station Purpose" HorizontalAlignment="Left" Margin="10,104,0,0" Grid.Row="1" FontFamily="Times New Roman" 
                VerticalAlignment="Top" Height="36" Width="210" Foreground="White" FontSize="20"/>
-        <Label HorizontalAlignment="Center" Margin="0,237,0,0" Grid.Row="1" Foreground="White" 
+        <Label HorizontalAlignment="Center" Margin="0,140,0,0" Grid.Row="1" Foreground="White" 
                VerticalAlignment="Top" Height="120" Width="633" FontSize="14"
                Content=
                "The Surveilia ground station is designed for viewing data acquired during flight. Stats provides &#xA;graphical and specific relevant data including flight time, people encountered, etc.                
