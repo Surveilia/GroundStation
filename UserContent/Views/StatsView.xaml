@@ -39,10 +39,10 @@
         <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Right" Grid.Row="1" Background="#140915" Foreground="White" 
                             Margin="10,25,0,5">
             <lvc:CartesianChart.AxisY>
-                <lvc:Axis Title="General Information" LabelFormatter="{Binding YFormatter}" Foreground="White" FontSize="12"></lvc:Axis>
+                <lvc:Axis Title="General Information" LabelFormatter="{Binding YFormatter}" Foreground="White" FontSize="12"/>
             </lvc:CartesianChart.AxisY>
-            <lvc:CartesianChart.AxisX>
-                <lvc:Axis Title="Time(m)" Labels="{Binding Labels}" Foreground="White" FontSize="12"></lvc:Axis>
+            <lvc:CartesianChart.AxisX >
+                <lvc:Axis Title="Time(m)" ShowLabels="True" LabelFormatter="{Binding XFormatter}" Foreground="White" FontSize="12"/>
             </lvc:CartesianChart.AxisX>
         </lvc:CartesianChart>
     </Grid>

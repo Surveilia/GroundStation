@@ -37,7 +37,14 @@
                VerticalAlignment="Top" Height="234" Width="188"
                Content="Image needs to be recieved 
                &#10;here, or a text block of &#10;'no one on site' is displayed. &#10;Below is an example image"/>
-        <Image Source="D:\School\Year3\GroundStation\GUIupD\GUI_UpdatedFM-main\Images\ActPic.jpg" HorizontalAlignment="Left" Height="111" Margin="476,118,0,0" Grid.Row="1" VerticalAlignment="Top" Width="146"/>
+        <Image x:Name="HumanRecogImg" HorizontalAlignment="Left" Height="235" Margin="455,37,0,0" Grid.Row="1" VerticalAlignment="Top" Width="188">
+            <Image.Source>
+                <BitmapImage UriSource="D:\School\Year3\GroundStation\GUIupD\GUI_UpdatedFM-main\Images\ActPic.jpg"/>
+            </Image.Source>
+        </Image>
+            <!-- Source="{Binding imagePath}" -->
+        <Button x:Name="ViewImg" Content="View Photo" HorizontalAlignment="Left" Margin="455,271,0,0" Grid.Row="1" VerticalAlignment="Top"
+                Click="ViewImg_Click"/>
 
         <Label x:Name="UsrWarn" HorizontalAlignment="Center" Margin="0,37,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Width="184" Foreground="White"
                Content="This label is a user warning if &#10;the AI recognizes a person."/>
