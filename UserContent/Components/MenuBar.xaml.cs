@@ -4,14 +4,12 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using ModernGUI_Surveilia.UserContent.ViewModels;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.IO;
+using System.Text;
 
 namespace ModernGUI_Surveilia.UserContent.Components
 {
@@ -21,6 +19,9 @@ namespace ModernGUI_Surveilia.UserContent.Components
     public partial class MenuBar : UserControl
     {
         int index = 0;
+
+        //If not minimized, false.
+        private bool Minimzed = false;
 
         public static MenuBar instance;
         public MenuBar()
@@ -51,7 +52,18 @@ namespace ModernGUI_Surveilia.UserContent.Components
         //minimize the window
         private void Minimize_Click(object sender, RoutedEventArgs e)
         {
-            //this.Height = 50;
+            if(Minimzed == false)
+            {
+                Application.Current.MainWindow.Height = 50;
+                Minimzed = true;
+                Minimize.Content = "\u0560";
+            }
+            else
+            {
+                Application.Current.MainWindow.Height = 415;
+                Minimzed = false;
+                Minimize.Content = "_";
+            }
         }
 
         private void Screenshot_Click(object sender, RoutedEventArgs e)
