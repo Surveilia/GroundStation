@@ -49,7 +49,7 @@ namespace ModernGUI_Surveilia.UserContent.Components
         {
             Application.Current.Shutdown();
         }
-        //minimize the window
+        //minimize/maximize the window
         private void Minimize_Click(object sender, RoutedEventArgs e)
         {
             if(Minimzed == false)
@@ -65,15 +65,16 @@ namespace ModernGUI_Surveilia.UserContent.Components
                 Minimize.Content = "_";
             }
         }
+        
 
         private void Screenshot_Click(object sender, RoutedEventArgs e)
         {
-            Screenshot(this);
+            Screenshot(Application.Current.MainWindow);
         }
 
         private void Screenshot(FrameworkElement element)
         {
-            string path = @"D:\Pictures\Surveilia\Screenshots\";
+            string path = @"C:\Users\Ethan Pyle\Pictures\Surveilia\Screenshots\";
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
@@ -82,7 +83,7 @@ namespace ModernGUI_Surveilia.UserContent.Components
             String filename = path + DateTime.Now.ToString("ddMMyyyy-hhmmss") +".png";
             
             //get screenshot of the element
-            RenderTargetBitmap bmp = new RenderTargetBitmap((int)element.ActualWidth, (int)element.ActualHeight, 96, 96, PixelFormats.Pbgra32);
+            RenderTargetBitmap bmp = new RenderTargetBitmap((int)element.Width, (int)element.Height, 96, 96, PixelFormats.Pbgra32);
             bmp.Render(element);
             //create encoder
             PngBitmapEncoder encoder = new PngBitmapEncoder();

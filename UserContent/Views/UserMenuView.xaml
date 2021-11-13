@@ -53,22 +53,22 @@
         </Grid>
         <Label x:Name="FullName"  Background="#140915" FontSize="14" Foreground="#140915" Grid.Row="2" Width="200" Height="30" 
                VerticalAlignment="Top" HorizontalAlignment="Left" Margin="120,20,0,0" HorizontalContentAlignment="Center" DataContext="Name"/>
-        <Label Background="#0F293D" FontSize="14" Foreground="FloralWhite" Grid.Row="1" Width="80" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left"
+        <Label Background="#0F293D" FontSize="14" Foreground="FloralWhite" Grid.Row="1" Width="100" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Copperplate Gothic Bold" Padding="0,10,0,0"
                Margin="20,15,0,0" HorizontalContentAlignment="Center" >Operator:</Label>
         <TextBox x:Name="Name" BorderBrush="#252F3D" Background="#252F3D" FontSize="20" Foreground="FloralWhite" Grid.Row="1" Width="230" Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" 
-                 Margin="100,15,0,0" TextAlignment="Left"></TextBox>
-        <Button Grid.Row="1" Background="#0F293D" Foreground="FloralWhite" Height="19" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                 Margin="120,15,0,0" TextAlignment="Left"></TextBox>
+        <Button Grid.Row="1" Background="#0F293D" Foreground="FloralWhite" Height="30" Width="67" HorizontalAlignment="Left" VerticalAlignment="Top"  FontFamily="Copperplate Gothic Bold"
                 Margin="20,56,0,0" Click="Save_Click">Save</Button>
 
-        <Label Content="Ground Station Purpose" HorizontalAlignment="Left" Margin="10,104,0,0" Grid.Row="1" FontFamily="Times New Roman" 
-               VerticalAlignment="Top" Height="36" Width="210" Foreground="White" FontSize="20"/>
-        <Label HorizontalAlignment="Center" Margin="0,140,0,0" Grid.Row="1" Foreground="White" 
-               VerticalAlignment="Top" Height="120" Width="633" FontSize="14"
-               Content=
-               "The Surveilia ground station is designed for viewing data acquired during flight. Stats provides &#xA;graphical and specific relevant data including flight time, people encountered, etc.                
-               &#xA;Also, when a person is encountered, a picture will be sent for display with a time stamp                 
-               &#xA;in the Stats.  The ground station connects to the Surveilia flight computer using User Datagram 
-               &#10;Protocol.  The protoype only sends information back to the ground station. The ground station is 
-               &#10;intended to be for user information and situational awareness."/>
+        <Label Content="Ground Station Purpose" HorizontalAlignment="Center" Margin="0,95,0,0" Grid.Row="1" FontFamily="Copperplate Gothic Bold"
+               VerticalAlignment="Top" Height="36" Width="291" Foreground="White" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,131,0,29" Grid.Row="1" Foreground="White" TextAlignment="Center" FontFamily="Copperplate Gothic Bold" LineHeight="25" Width="503" FontSize="14" TextWrapping="Wrap">
+               The Surveilia ground station is designed for viewing data acquired during flight. 
+               Stats provides graphical and specific relevant data including flight time, people encountered, etc.                
+               Also, when a person is encountered, a picture will be sent for display with a time stamp                 
+               in the Stats.  The ground station connects to the Surveilia flight computer using User Datagram 
+               Protocol.  The protoype only sends information back to the ground station. The ground station is 
+               intended to be for user information and situational awareness.
+        </TextBlock>
     </Grid>
 </UserControl>
