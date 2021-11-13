@@ -83,7 +83,6 @@
                     Foreground="LightGray" Grid.Column="4" Click="Minimize_Click" FontSize="14" Width="23" Height="23" Margin="0,5,10,7" Grid.RowSpan="1"/>
             <Button x:Name="Exit" HorizontalAlignment="Center" VerticalAlignment="Center" Content="X"
                     Foreground="LightGray" Grid.Column="5" Click="Exit_Click" FontSize="14" Width="23" Height="23" Margin="1,5,3,7" Grid.RowSpan="1"/>
-
         </Grid>
 
         <!--

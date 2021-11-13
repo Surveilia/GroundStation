@@ -40,7 +40,7 @@ namespace ModernGUI_Surveilia.UserContent.Views
             bi.BeginInit();
             
             //This is the Directory, change it**********************************
-            bi.UriSource = new Uri(@"D:\School\Year3\GroundStation\GUIupD\GUI_UpdatedFM-main\Images\Surveilia.jpg");
+            bi.UriSource = new Uri(@"C:\Users\Ethan Pyle\source\repos\GroundStation\Images\Surveilia.jpg");
             
             
             bi.EndInit();

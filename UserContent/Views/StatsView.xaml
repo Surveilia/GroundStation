@@ -31,7 +31,7 @@
             <!-- 
             This block of code represents the buttons and GUI header. 
             -->
-            <TextBlock Text="SURVEILIA - STATS" Foreground="FloralWhite" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"
+            <TextBlock Text="STATS" Foreground="FloralWhite" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"
                    FontSize="18" Grid.ColumnSpan="1" Margin="5,8,17,7" Width="190" FontFamily="Copperplate Gothic Bold" Height="20"/>
         </Grid>
         <Label FontSize="18" Background="#140915" Foreground="FloralWhite" Grid.Row="1" HorizontalContentAlignment="Center" 

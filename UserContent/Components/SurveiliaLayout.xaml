@@ -3,12 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ModernGUI_Surveilia.UserContent.Components" xmlns:viewmodels="clr-namespace:ModernGUI_Surveilia.UserContent.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:SurveiliaLayoutViewModel}"
-             mc:Ignorable="d"
+            xmlns:local="clr-namespace:ModernGUI_Surveilia.UserContent.Components" 
+            xmlns:viewmodels="clr-namespace:ModernGUI_Surveilia.UserContent.ViewModels" 
+            d:DataContext="{d:DesignInstance Type=viewmodels:SurveiliaLayoutViewModel}"
+        mc:Ignorable="d"
         Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="450" />
+            <RowDefinition Height="450"/>
         </Grid.RowDefinitions>
 
         <local:MenuBar DataContext="{Binding MenuBarViewModel}"/>

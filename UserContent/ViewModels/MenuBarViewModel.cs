@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using ModernGUI_Surveilia.UserContent.Commands;
+using ModernGUI_Surveilia.UserContent.Components;
 using ModernGUI_Surveilia.UserContent.Services;
 using System.Windows.Input;
 using System.Windows.Controls;
