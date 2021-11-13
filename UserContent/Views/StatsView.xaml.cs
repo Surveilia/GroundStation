@@ -104,10 +104,10 @@ namespace ModernGUI_Surveilia.UserContent.Views
             //array to populate the integer
 
             int[] dataArray = new int[listIndex];
-            string Directory = @"C:\Users\Ethan Pyle\Desktop\Test\Test1.txt";
+            string Directory = @"C:\Surveilia\Data\Y.txt";
             //array 2
             int[] dataArray2 = new int[listIndex];
-            string Directory2 = @"C:\Users\Ethan Pyle\Desktop\Test\Test2.txt";
+            string Directory2 = @"C:\Surveilia\Data\X.txt";
 
             using (StreamReader x = new StreamReader(Directory))
             {

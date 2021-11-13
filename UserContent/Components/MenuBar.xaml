@@ -50,18 +50,18 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="128"/>
+            <ColumnDefinition Width="130"/>
             <ColumnDefinition Width="653"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Background="#0F0F2D"  HorizontalAlignment="Left" Width="781" Grid.ColumnSpan="2">
+        <Grid Background="#0F0F2D" Grid.ColumnSpan="2" Margin="0,0,-17,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="35"/>
-                <RowDefinition Height="415"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="118"/>
-                <ColumnDefinition Width="103"/>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="93"/>
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="333"/>
@@ -71,18 +71,18 @@
             <!-- 
             This block of code represents the buttons and GUI header. 
             -->
-            <TextBlock Text="SURVEILIA" Foreground="GhostWhite" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"
-                   FontSize="18" FontFamily="Copperplate Gothic Bold" Height="20" Width="110" Margin="4,8,4,7" Grid.RowSpan="1"/>
-            <Button x:Name="Menu" Content="Menu" FontSize="18" Foreground="LightGray" Grid.Column="1" VerticalAlignment="Center" 
-                    Background="#0F0F2D" HorizontalAlignment="Center" FontFamily="Copperplate Gothic Bold" Height="22" Margin="24,6,23,7" Width="56" ToolTip="Menu" Grid.RowSpan="1" Command="{Binding NavigateMenuCommand}"/>
-            <Button x:Name="Stats" Content="Stats" FontSize="18" Foreground="LightGray" Grid.Column="2" VerticalAlignment="Top" 
-                    Background="#0F0F2D" HorizontalAlignment="Left" FontFamily="Copperplate Gothic Bold" Height="22" Margin="21,6,0,0" Width="61" ToolTip="Stats" Grid.RowSpan="1" Command="{Binding NavigateStatsCommand}"/>
+            <TextBlock Text="SURVEILIA" Foreground="GhostWhite" VerticalAlignment="Center" HorizontalAlignment="Center"
+                   FontSize="20" FontFamily="Copperplate Gothic Bold" Height="22" Width="124"/>
+            <Button x:Name="Menu" Content="Home" FontSize="18" Foreground="LightGray" Grid.Column="1" VerticalAlignment="Center" 
+                    Background="#0F0F2D" HorizontalAlignment="Center" FontFamily="Copperplate Gothic Bold" Height="22" Width="56" ToolTip="Menu" Command="{Binding NavigateMenuCommand}"/>
+            <Button x:Name="Stats" Content="Stats" FontSize="18" Foreground="LightGray" Grid.Column="2" VerticalAlignment="Center" 
+                    Background="#0F0F2D" HorizontalAlignment="Left" FontFamily="Copperplate Gothic Bold" Height="22" Margin="21,0,0,0" Width="61" ToolTip="Stats" Command="{Binding NavigateStatsCommand}"/>
             <Button x:Name="Help" Content="Help" FontSize="18" Foreground="LightGray" Grid.Column="3" VerticalAlignment="Center" 
-                    Background="#0F0F2D" HorizontalAlignment="Center" FontFamily="Copperplate Gothic Bold" Height="22" Margin="25,6,22,7" Width="53" ToolTip="Help" Grid.RowSpan="1" Command="{Binding NavigateHelpCommand}"/>
-            <Button x:Name="Minimize" HorizontalAlignment="Right" VerticalAlignment="Center" Content="_"
-                    Foreground="LightGray" Grid.Column="4" Click="Minimize_Click" FontSize="14" Width="23" Height="23" Margin="0,5,10,7" Grid.RowSpan="1"/>
-            <Button x:Name="Exit" HorizontalAlignment="Center" VerticalAlignment="Center" Content="X"
-                    Foreground="LightGray" Grid.Column="5" Click="Exit_Click" FontSize="14" Width="23" Height="23" Margin="1,5,3,7" Grid.RowSpan="1"/>
+                    Background="#0F0F2D" HorizontalAlignment="Left" FontFamily="Copperplate Gothic Bold" Height="22" Margin="25,0,0,0" Width="53" ToolTip="Help" Command="{Binding NavigateHelpCommand}"/>
+            <Button x:Name="Minimize" HorizontalAlignment="Left" VerticalAlignment="Center" Content="_"
+                    Foreground="LightGray" Grid.Column="4" Click="Minimize_Click" FontSize="14" Width="23" Height="23" Margin="300,0,0,0"/>
+            <Button x:Name="Exit" HorizontalAlignment="Left" VerticalAlignment="Center" Content="X"
+                    Foreground="LightGray" Grid.Column="5" Click="Exit_Click" FontSize="14" Width="23" Height="22"/>
         </Grid>
 
         <!--
@@ -91,19 +91,24 @@
         -->
         <StackPanel Margin="0,0,0,0" Background="#0F093D" Grid.Row="1">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Button x:Name="UserBTN" Height="90" Width="90" ToolTip="Edit User Settings" Command="{Binding NavigateUserMenuCommand}" Margin="0,10,0,0">
+                <Button x:Name="UserBTN" Height="90" Width="90" ToolTip="Edit User Settings" Command="{Binding NavigateUserMenuCommand}" Margin="0,20,0,0">
                     <Button.Background>
                         <ImageBrush ImageSource="/UserContent/Components/Surveilia.jpg"/>
                     </Button.Background>
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
                 </Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5,0,5,5" HorizontalAlignment="Center"/>
-            <Label Name="NameTextBlock" FontSize="14" Width="100" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#0F293D" Margin="0,20,0,0"
+            <Label Name="NameTextBlock" FontSize="14" Width="100" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#0F293D" Margin="0,20,0,0" FontFamily="Copperplate Gothic Bold" Padding="0,7,0,0"
                    Foreground="FloralWhite" Content="Name" HorizontalContentAlignment="Center"/>
             <Label Name="lblTime" HorizontalAlignment="Center" Margin="0,25,0,0" Width="100" Height="30" FontSize="14" Foreground="FloralWhite" Background="#0F293D"
                    HorizontalContentAlignment="Center"/>
 
-            <Button x:Name="ScreenshotButton" HorizontalAlignment="Center" Margin="0,25,0,0" Width="100" Height="60" Click="Screenshot_Click" RenderTransformOrigin="0.5,0.5" BorderThickness="1,1,1,1" >
+            <Button x:Name="ScreenshotButton" HorizontalAlignment="Center" Margin="0,25,0,0" Width="100" Height="60" Click="Screenshot_Click" RenderTransformOrigin="0.5,0.5" BorderThickness="1,1,1,1">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -115,6 +120,11 @@
                 <Button.Background>
                     <ImageBrush ImageSource="/UserContent/Components/camera.jpg"/>
                 </Button.Background>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </Button.Resources>
             </Button>
         </StackPanel>
     </Grid>

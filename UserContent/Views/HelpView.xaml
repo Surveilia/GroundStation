@@ -24,27 +24,32 @@
             <RowDefinition Height="380"/>
         </Grid.RowDefinitions>
 
-        <Grid Background="#140915">
+        <Grid Background="#0F0F2D">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="653"/>
             </Grid.ColumnDefinitions>
             <!-- 
             This block of code represents the buttons and GUI header. 
             -->
-            <TextBlock Text="HELP" Foreground="FloralWhite" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left"
-                   FontSize="18" Margin="5,8,0,7" Width="198" FontFamily="Copperplate Gothic Bold" Height="20"/>
+            <TextBlock Text="HELP" Foreground="FloralWhite" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"
+                   FontSize="18" Grid.ColumnSpan="1" Margin="5,0,0,0" Width="81" FontFamily="Copperplate Gothic Bold" Height="20"/>
         </Grid>
 
 
-        <Label x:Name="HelpWindowLabel" Foreground="FloralWhite" FontFamily="Times New Roman" FontSize="18" Content="How to use:"  HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="32" Width="95"/>
-        <Label x:Name="HelpWindowInfo" HorizontalAlignment="Left" Margin="20,47,0,0" Grid.Row="1" VerticalAlignment="Top" Height="102" Width="607" Foreground="White"
-               Content="Hello and welcome to the Surveilia ground station. Surveilia is an autonomous security system that informs &#10;users when it detects human activity. When a human is detected, a message and image is displayed in the &#10;main page of this application.
-               &#10;&#10;Surveilia is currently asynchronous due to hidden firmware on the Kakute F7 flight controller. To get best use &#10;follow these instructions:"/>
+        <Label x:Name="HelpWindowLabel" Foreground="FloralWhite" Content="How To Use:"  HorizontalAlignment="Center" Margin="0,27,0,0" Grid.Row="1" VerticalAlignment="Top" Height="32" Width="144" FontSize="20" FontFamily="Copperplate Gothic Bold" />
+        <TextBlock x:Name="HelpWindowInfo" HorizontalAlignment="Left" Margin="20,64,0,0" Grid.Row="1" VerticalAlignment="Top" Height="144" Width="607" Foreground="White" TextWrapping="Wrap" FontSize="18">
+        Welcome to the Surveilia Ground Station. Surveilia is an autonomous security drone system that informs users when it detects human activity. 
+        When a human is detected, a message and image is displayed in the main menu of this application.
+        Surveilia is currently asynchronous due to hidden firmware on the Kakute F7 flight controller. To get the best use follow these instructions:</TextBlock>
+        <TextBlock x:Name="Instructions" HorizontalAlignment="Left" Margin="20,60,0,0" Grid.Row="1" VerticalAlignment="Center" Height="30" Width="607" Foreground="White" TextWrapping="Wrap" FontSize="18">
+        To get the best use follow these instructions:</TextBlock>
+        <Label Content="- Ensure all batteries are 100% charged before flight &#10;- Establish communication between directories and the G.S. before flight &#10;- Fly in a designated area with proper licensing &#10;-
+               " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Foreground="White" FontSize="18" Margin="20,180,0,0" ></Label>
         <TextBlock Grid.Row="1" Margin="0,0,0,20" HorizontalAlignment="Center" VerticalAlignment="Bottom">
         <Hyperlink NavigateUri="http://www.google.com" RequestNavigate="Hyperlink_RequestNavigate" Foreground="White" FontFamily="Copperplate Gothic Bold" FontSize="16">
-                Click here to access our Wix Website
+            Click here to access our Wix Website
         </Hyperlink>
         </TextBlock>
-        
+
     </Grid>
 </UserControl>

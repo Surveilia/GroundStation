@@ -30,19 +30,25 @@
             <!-- 
             This block of code represents the buttons and GUI header. 
             -->
-            <TextBlock Text="MENU" Foreground="FloralWhite" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"
-                   FontSize="18" Grid.ColumnSpan="1" Width="186" FontFamily="Copperplate Gothic Bold" Height="20" Margin="5,8,35,7"/>
+            <TextBlock Text="HOME" Foreground="FloralWhite" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"
+                   FontSize="18" Grid.ColumnSpan="1" Margin="5,0,0,0" Width="81" FontFamily="Copperplate Gothic Bold" Height="20"/>
         </Grid>
-        <TextBlock HorizontalAlignment="Right" Margin="0,54,20,0" Grid.Row="1" Foreground="White" Background="Green" TextAlignment="Center" Padding="0,80,0,0"
-               VerticalAlignment="Top" Height="236" Width="188"  FontFamily="Copperplate Gothic Bold" TextWrapping="Wrap">Image needs to be recieved here, or a text block of 'no one on site' is displayed. Below is an example image</TextBlock>
-        <Image x:Name="HumanRecogImg" HorizontalAlignment="Left" Height="307" Margin="18,53,0,0" Grid.Row="1" VerticalAlignment="Top" Width="602">
+        <TextBlock HorizontalAlignment="Right" Margin="0,45,20,0" Grid.Row="1" Foreground="White" TextAlignment="Center" Padding="0,80,0,0"
+               VerticalAlignment="Top" Height="236" Width="188"  FontFamily="Copperplate Gothic Bold" TextWrapping="Wrap" Background="Green">Image needs to be recieved here, or a text block of 'no one on site' is displayed. Below is an example image</TextBlock>
+        <Image x:Name="HumanRecogImg" HorizontalAlignment="Left" Height="307" Margin="18,44,0,0" Grid.Row="1" VerticalAlignment="Top" Width="602">
             <Image.Source>
                 <BitmapImage UriSource="C:\Users\Ethan Pyle\source\repos\GroundStation\Images\ActPic.jpg"/>
             </Image.Source>
         </Image>
         <!-- Source="{Binding imagePath}" -->
-        <Button x:Name="ViewImg" Content="View Photo" HorizontalAlignment="Right" Margin="0,303,20,0" Grid.Row="1" VerticalAlignment="Top" FontSize="25" FontFamily="Copperplate Gothic Bold"
-                Click="ViewImg_Click" Height="57" Width="188"/>
+        <Button x:Name="ViewImg" Content="View Photo" HorizontalAlignment="Right" Margin="0,294,20,0" Grid.Row="1" VerticalAlignment="Top" FontSize="25" FontFamily="Copperplate Gothic Bold"
+                Click="ViewImg_Click" Height="57" Width="188">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
 
         <Label x:Name="UsrWarn" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="38" Width="595" Foreground="White" FontSize="18" FontFamily="Copperplate Gothic Bold"
                Content="This label is a user warning if the AI recognizes a person"/>
