@@ -74,7 +74,7 @@ namespace ModernGUI_Surveilia.UserContent.Components
 
         private void Screenshot(FrameworkElement element)
         {
-            string path = @"C:\Users\Ethan Pyle\Pictures\Surveilia\Screenshots\";
+            string path = @"C:\Surveilia\Screenshots\";
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);

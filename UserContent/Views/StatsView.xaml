@@ -23,7 +23,7 @@
             <RowDefinition Height="380"/>
         </Grid.RowDefinitions>
 
-        <Grid Background="#140915">
+        <Grid Background="#0F0F2D">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="653"/>
             </Grid.ColumnDefinitions>
@@ -32,9 +32,9 @@
             This block of code represents the buttons and GUI header. 
             -->
             <TextBlock Text="STATS" Foreground="FloralWhite" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"
-                   FontSize="18" Grid.ColumnSpan="1" Margin="5,8,17,7" Width="190" FontFamily="Copperplate Gothic Bold" Height="20"/>
+                   FontSize="18" Grid.ColumnSpan="1" Margin="5,0,0,0" Width="81" FontFamily="Copperplate Gothic Bold" Height="20"/>
         </Grid>
-        <Label FontSize="18" Background="#140915" Foreground="FloralWhite" Grid.Row="1" HorizontalContentAlignment="Center" 
+        <Label FontSize="20" Background="#140915" Foreground="FloralWhite" Grid.Row="1" HorizontalContentAlignment="Center" FontFamily="Copperplate Gothic Bold" Padding="0,7,0,0"
                Margin="0,-4,0,350" FontWeight="Heavy">Flight Analysis</Label>
         <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Right" Grid.Row="1" Background="#140915" Foreground="White" 
                             Margin="10,25,0,5">
