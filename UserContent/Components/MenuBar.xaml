@@ -103,10 +103,22 @@
                 </Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5,0,5,5" HorizontalAlignment="Center"/>
-            <Label Name="NameTextBlock" FontSize="14" Width="100" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#0F293D" Margin="0,20,0,0" FontFamily="Copperplate Gothic Bold" Padding="0,7,0,0"
-                   Foreground="FloralWhite" Content="Name" HorizontalContentAlignment="Center"/>
-            <Label Name="lblTime" HorizontalAlignment="Center" Margin="0,25,0,0" Width="100" Height="30" FontSize="14" Foreground="FloralWhite" Background="#0F293D"
-                   HorizontalContentAlignment="Center"/>
+            <Label Name="NameTextBlock" MinWidth="110" MinHeight="28" MaxWidth="115" MaxHeight="30" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#0F293D" FontFamily="Copperplate Gothic Bold" Padding="0,7,0,0" Width="115" Height="30" Margin="0,20,0,0"
+                   Foreground="FloralWhite" Content="Name" HorizontalContentAlignment="Center">
+                    <Label.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Label.Resources>
+             </Label>
+                <Label Name="lblTime" HorizontalAlignment="Center" Margin="0,25,0,0" Width="115" Height="30" FontSize="14" Foreground="FloralWhite" Background="#0F293D"
+                   HorizontalContentAlignment="Center">
+                <Label.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Label.Resources>
+            </Label>
 
             <Button x:Name="ScreenshotButton" HorizontalAlignment="Center" Margin="0,25,0,0" Width="100" Height="60" Click="Screenshot_Click" RenderTransformOrigin="0.5,0.5" BorderThickness="1,1,1,1">
                 <Button.RenderTransform>
