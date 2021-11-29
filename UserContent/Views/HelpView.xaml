@@ -24,19 +24,20 @@
             <RowDefinition Height="380"/>
         </Grid.RowDefinitions>
 
-        <Grid Background="#0F0F2D">
+        <Grid Background="#140915">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="653"/>
             </Grid.ColumnDefinitions>
             <!-- 
             This block of code represents the buttons and GUI header. 
             -->
-            <TextBlock Text="HELP" Foreground="FloralWhite" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"
-                   FontSize="18" Grid.ColumnSpan="1" Margin="5,0,0,0" Width="81" FontFamily="Copperplate Gothic Bold" Height="20"/>
+            <TextBlock Text="HELP" Foreground="FloralWhite" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left"
+                   FontSize="18" Margin="5,8,0,7" Width="198" FontFamily="Copperplate Gothic Bold" Height="20"/>
         </Grid>
 
 
-        <Label x:Name="HelpWindowLabel" Foreground="FloralWhite" Content="Accessibility"  HorizontalAlignment="Left" Margin="7,17,0,0" Grid.Row="1" VerticalAlignment="Top" Height="32" Width="160" FontSize="20" FontFamily="Copperplate Gothic Bold" />
+        <Label x:Name="HelpWindowLabel" Foreground="FloralWhite" FontFamily="Times New Roman" FontSize="18" Content="How to use:"  HorizontalAlignment="Left" 
+               Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="32" Width="95"/>
         <TextBlock x:Name="HelpWindowInfo" HorizontalAlignment="Left" Margin="12,54,0,0" Grid.Row="1" VerticalAlignment="Top" Height="156" Width="623" Foreground="White" TextWrapping="Wrap" FontSize="18" TextAlignment="Justify">
         Welcome to the Surveilia Ground Station Help Window. Surveilia is an autonomous security drone system that informs users when human activity is detected. 
         When a human is detected, a message and image is displayed in the main menu of this application. As well as the statistics in the Stats Window.
@@ -44,12 +45,14 @@
         </TextBlock>
         <TextBlock x:Name="Instructions" HorizontalAlignment="Left" Margin="12,197,0,0" Grid.Row="1" VerticalAlignment="Top" Height="30" Width="607" Foreground="FloralWhite" TextWrapping="Wrap" FontSize="20" FontFamily="Copperplate Gothic Bold">
         To ensure safety and compliance:</TextBlock>
-        <Label Content="- Ensure all batteries are 100% charged before flight &#xA;- Establish communication between directories and the G.S. before flight &#xA;- Fly in a designated area with proper licensing" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Foreground="White" FontSize="18" Margin="12,224,0,0" ></Label>
-        <TextBlock Grid.Row="1" Margin="0,325,0,0" HorizontalAlignment="Center" VerticalAlignment="Top">
-        <Hyperlink NavigateUri="http://www.google.com" RequestNavigate="Hyperlink_RequestNavigate" Foreground="White" FontFamily="Copperplate Gothic Bold" FontSize="18">
-            Click here to access our Wix Website
+        <Label Content="- Ensure all batteries are 100% charged before flight &#xA;- Establish communication between directories and the G.S. before flight &#xA;- Fly in a designated area with proper licensing" 
+               HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Foreground="White" FontSize="18" Margin="12,224,0,0" ></Label>
+        <TextBlock Grid.Row="1" Margin="0,0,0,20" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+        <Hyperlink NavigateUri="https://surveilia.wixsite.com/surveilia" RequestNavigate="Hyperlink_RequestNavigate" Foreground="White" 
+                   FontFamily="Copperplate Gothic Bold" FontSize="16">
+                Click here to access our Wix Website
         </Hyperlink>
         </TextBlock>
-
+        
     </Grid>
 </UserControl>

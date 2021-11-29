@@ -7,7 +7,7 @@
             xmlns:viewmodels="clr-namespace:ModernGUI_Surveilia.UserContent.ViewModels" 
             d:DataContext="{d:DesignInstance Type=viewmodels:SurveiliaLayoutViewModel}"
         mc:Ignorable="d"
-        Height="450" Width="785">
+        Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="450"/>

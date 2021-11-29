@@ -1,14 +1,16 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Controls;
+using System.Windows.Threading;
 using LiveCharts;
 using LiveCharts.Wpf;
+using ModernGUI_Surveilia.UserContent.Components;
 
 
 /*
  * 
-*                                           -------------Graphing--------------
- * Written By: Ben Kennedy & Chase Westlake & Ethan Pyle
+ *                                          -------------Graphing--------------
+ * Written By: Chase Westlake
  * 
  * References: 
  * 
@@ -69,14 +71,32 @@ using LiveCharts.Wpf;
 * 
 * 
 * 
-*       TO DO LIST:
-*                   
-*                   - Integrate timer and graphing tool
-*                   - Ensure that the graph uploads brand new when the stats panel is opened
-*                   - Ensure that there are accurate tallies of the length of text files being read to graph
-*                   - Ensure that graph 2 can successfully read it's own data (if graph 2 is used)
-*                   - Graph the x and y axis with appropriate text files
+*                                            ------- Data Handling -------
+* 
+*       Written by:     Chase Westlake
 *       
+*       Project:        Surveilia 
+*       
+*       Description:    Data handling is part of the packet structure. The ground station handles the reception and store to graphical interfaces.
+*       
+*       
+*       Data file:      Must have index counted from the sender on the first line. This means, each time data is added to the text file,
+*                       the first line must be incremented. The index must track all lines in the text file. That includes the line of the index.
+*                       
+*                       A possible solution on the trasmitter end is to used a linked list. Python uses expandable arrays. But if a lower level language
+*                       is used, a linked list is advised.
+*       
+*       
+*       
+* 
+* 
+*                                            ---------- Next Steps -------
+*                                   
+*       TO DO LIST:
+
+*                   - Make Live Chart Real Time https://www.scichart.com/documentation/win/current/Tutorial%2006%20-%20Adding%20Realtime%20Updates.html
+*                                               https://stackoverflow.com/questions/40415298/how-do-i-correctly-update-my-chart-values-in-real-time 
+*                   - Gyroscope cut from graphing
 *       DO ON START:
 *       
 *                   - Check that all directories are correct
@@ -84,8 +104,6 @@ using LiveCharts.Wpf;
 *                   
 *                   
 */
-
-
 
 
 namespace ModernGUI_Surveilia.UserContent.Views
@@ -96,107 +114,132 @@ namespace ModernGUI_Surveilia.UserContent.Views
     public partial class StatsView : UserControl
     {
 
-        int listIndex = 10;
+        //Directory for data
+        string accDir = @"C:\Surveilia\Data\AccData.txt";
+        //string gyrDir = @"C:\Surveilia\Data\GyroData.txt";
 
         public StatsView()
         {
             InitializeComponent();
-            //array to populate the integer
 
-            int[] dataArray = new int[listIndex];
-            string Directory = @"C:\Surveilia\Data\Y.txt";
-            //array 2
-            int[] dataArray2 = new int[listIndex];
-            string Directory2 = @"C:\Surveilia\Data\X.txt";
+            Loaded += StatsView_Loaded;
+        }
 
-            using (StreamReader x = new StreamReader(Directory))
+        private void StatsView_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            //Initialize graphing
+            GraphTool();
+
+
+            //Initialize timer
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+
+            //When the timer is initiated, it calls statsTimer_Tick every iteration of it's time span. Currently set to 1 second.
+            timer.Tick += statsTimer_Tick;
+            timer.Start();
+        }
+
+
+
+        //Handles timing for stats model. 
+        private void statsTimer_Tick(object sender, EventArgs e)
+        {
+            TickCount.Content = "Tick: " + MenuBar.instance.getTick();
+            int currTick = Convert.ToInt16(TickCount.Content.ToString().Trim('T', 'i', 'c', 'k', ':', ' '));
+
+            //updates graph every 30 seconds and increments count of lines for text file to determine the index for graph updates
+            if (currTick % 4 == 0)
             {
-                for (int i = 0; i < listIndex; i++)
-                {
-                    dataArray[i] = int.Parse(x.ReadLine());
-                }
+                //This.DataContext = null refreshes the screen. Very sloppy.
+                this.DataContext = null;
+                //GraphTool();
+                GraphTool();
             }
+        }
 
-            using (StreamReader x = new StreamReader(Directory2))
+
+        //Graphs the data file
+        private void GraphTool()
+        {
+
+            try
             {
-                for (int i = 0; i < listIndex; i++)
-                {
-                    dataArray2[i] = int.Parse(x.ReadLine());
-                }
-            }
+                //array to populate the integer
+                int[] AccData = new int[getIndex(accDir)];
+                //int[] GyrData = new int[getIndex(gyrDir)];
 
-            SeriesCollection = new SeriesCollection
+                //Fill data from text file. Use number generator for simplicity.
+                using (StreamReader x = new StreamReader(accDir))
+                {
+                    x.ReadLine();
+                    for (int i = 1; i < getIndex(accDir); i++)
+                    {
+                        AccData[i] = int.Parse(x.ReadLine());
+                    }
+                }
+                //Fill data from text file. Use number generator for simplicity.
+               /* using (StreamReader x = new StreamReader(gyrDir))
+                {
+                    x.ReadLine();
+                    for (int i = 1; i < getIndex(gyrDir); i++)
+                    {
+                        GyrData[i] = int.Parse(x.ReadLine());
+                    }
+                }*/
+
+                //Creates a new instance of the live chart. The data is not bound, so it is probably something to look into.
+                SeriesCollection = new SeriesCollection
             {
                 new LineSeries
                 {
-                    Title = "Graph1",
+                    Title = "Accelerometer Data",
                     Values = new ChartValues<int>()
-
                 },
-
-                new LineSeries
-                {
-                    Title = "Graph2",
-                    Values = new ChartValues<int>(),
-                    PointGeometry = null
-                },
-
-                new LineSeries
-                {
-                    Title = "Graph3",
-                    Values = new ChartValues<int> { 1, 2, 400, 250, 250, 250, 250, 300, 100, 10 },
-                    LineSmoothness = 0,
-                    PointGeometry = DefaultGeometries.Circle
-                }
             };
 
-            for (int i = 0; i < listIndex; i++)
-            {
-                SeriesCollection[0].Values.Add(dataArray[i]);
+
+                //Fill Graph 1 with text values.
+                for (int i = 0; i < getIndex(accDir); i++)
+                {
+                    SeriesCollection[0].Values.Add(AccData[i]);
+                    //SeriesCollection[1].Values.Add(GyrData[i]);
+                }
+
+                //Labels = new[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13" };
+                YFormatter = value => value.ToString("F");
+
+                DataContext = this;
             }
-
-            for (int i = 0; i < listIndex; i++)
+            catch
             {
-                SeriesCollection[1].Values.Add(dataArray2[i]);
-            }
-
-
-            //Labels = new[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13" };
-            YFormatter = value => value.ToString("F");
-            XFormatter = values => values.ToString("F");
-
-
-
-            /*
-            //modifying the series collection will animate and update the chart
-            SeriesCollection.Add(new LineSeries
-            {
-                Title = "Drone Data",
-                Values = new ChartValues<int>(),
-                LineSmoothness = 0, //0: straight lines, 1: really smooth lines
-                //PointGeometry = Geometry.Parse(),
-                PointGeometrySize = 10,
-                PointForeground = Brushes.Black
-            });
-
-            SeriesCollection.Add(new LineSeries
-            {
-                Title = "Drone Data 2",
-                Values2 = new ChartValues<int>(),
                 
-                LineSmoothness = 0, //0: straight lines, 1: really smooth lines
-                //PointGeometry = Geometry.Parse(),
-                PointGeometrySize = 10,
-                PointForeground = Brushes.Black
-            });*/
-            //modifying any series values will also animate and update the chart
-            //SeriesCollection[3].Values.Add(5d);
-
-            DataContext = this;
+            }
+            
         }
+        //Gets index from first value in data file. Note, the directory is global
+        private int getIndex(string path)
+        {
+            using (StreamReader index = new StreamReader(path))
+            {
+                return int.Parse(index.ReadLine());
+            } 
+        }
+
+
+        //Not super sure what these do. They are bits of code I picked up along the way. They seem to be object declarations?
         public SeriesCollection SeriesCollection { get; set; }
         public string[] Labels { get; set; }
-        public Func<double, string> YFormatter { get; set; }
+        private Func<double, string> _yFormatter;
+        public Func<double, string> YFormatter 
+        {
+            get { return _yFormatter; }
+            set
+            {
+                _yFormatter = value;
+            }
+        }
+
         public Func<double, string> XFormatter { get; set; }
     }
 }

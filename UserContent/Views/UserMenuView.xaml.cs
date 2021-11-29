@@ -30,8 +30,6 @@ namespace ModernGUI_Surveilia.UserContent.Views
 
         public object NameTextBlock { get; private set; }
 
-        //saves the operators name to the MenuBar to be displayed above the clock
-        //instantiates the MenuBar to set the parameter
         public void Save_Click(object sender, RoutedEventArgs e)
         {
             FullName.Content = Name.Text;
